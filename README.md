@@ -24,10 +24,10 @@ old one too, so it will consume the memory and time to copy the old String + new
 a new String will created and assigned to String a, keep go on until the last String.
  It use too much memory and time. But in StringBuilder has an attribute 'char []' inside its class, 
  so when append a new String or chars onto StringBuilder, it will updates its internal array as like as you 
- assign in it.This means the new memory is only allocated when the String grow and as long as the length of the character 
+ assign in it. This means the new memory is only allocated when the String grow and as long as the length of the character 
  sequence contained in the StringBuilder doesn't exceed the capacity, it is automatically made larger.
 
-### Explain difference in time to sum double, Double, and BigDecimal. Which is faster and why?
+### 3. Explain difference in time to sum double, Double, and BigDecimal. Which is faster and why?
 > Double is a wrapper class while double is a primitive type, so double is faster than Double because it not have any attributes or method which
 use much more memory like Double. And BigDecimal is slower than Double because it contain a lot of attributes and method more than Double.
  On the other hand, it includes many options for calculating expressions to arbitrary precision like + - * and / which is more accurate for numbers
