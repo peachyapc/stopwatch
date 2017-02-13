@@ -16,6 +16,8 @@ public class SumDoublePrimitive implements Runnable {
 	private static final int ARRAY_SIZE = 500000;
 	// sum to add all the number
 	private double sum;
+	// create array of values to add before we start the timer
+	double[] values = new double[ARRAY_SIZE];
 
 	/**
 	 * Constructor initializes the SumDoublePrimitive with a counter.
@@ -32,8 +34,6 @@ public class SumDoublePrimitive implements Runnable {
 	 */
 	@Override
 	public void run() {
-		// create array of values to add before we start the timer
-		double[] values = new double[ARRAY_SIZE];
 		for (int k = 0; k < ARRAY_SIZE; k++)
 			values[k] = k + 1;
 		// count = loop counter, i = array index value

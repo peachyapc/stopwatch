@@ -7,7 +7,7 @@ package stopwatch;
  *
  */
 public class SumDouble implements Runnable {
-	
+
 	// size of the array used in floating point tasks.
 	// Don't make this too big to avoid slowing down test with paging
 	// or possible out-of-memory error.
@@ -16,6 +16,8 @@ public class SumDouble implements Runnable {
 	private int counter;
 	// sum to add all the number
 	private double sum;
+	// create array of values to add, before we start the timer
+	Double[] values = new Double[ARRAY_SIZE];
 
 	/**
 	 * Constructor initializes the SumDouble with a counter.
@@ -32,8 +34,6 @@ public class SumDouble implements Runnable {
 	 */
 	@Override
 	public void run() {
-		// create array of values to add, before we start the timer
-		Double[] values = new Double[ARRAY_SIZE];
 		for (int i = 0; i < ARRAY_SIZE; i++)
 			values[i] = new Double(i + 1);
 		sum = new Double(0.0);

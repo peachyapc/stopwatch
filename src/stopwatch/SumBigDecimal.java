@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  *
  */
 public class SumBigDecimal implements Runnable {
-	
+
 	// size of the array used in floating point tasks.
 	// Don't make this too big to avoid slowing down test with paging
 	// or possible out-of-memory error.
@@ -18,6 +18,8 @@ public class SumBigDecimal implements Runnable {
 	private int counter;
 	// sum to add all the number
 	private BigDecimal sum = new BigDecimal(0.0);
+	// create array of values to add, before we start the timer
+	BigDecimal[] values = new BigDecimal[ARRAY_SIZE];
 
 	/**
 	 * Constructor initializes the SumDouble with a counter.
@@ -34,8 +36,6 @@ public class SumBigDecimal implements Runnable {
 	 */
 	@Override
 	public void run() {
-		// create array of values to add, before we start the timer
-		BigDecimal[] values = new BigDecimal[ARRAY_SIZE];
 		for (int i = 0; i < ARRAY_SIZE; i++)
 			values[i] = new BigDecimal(i + 1);
 		for (int count = 0, i = 0; count < counter; count++, i++) {
