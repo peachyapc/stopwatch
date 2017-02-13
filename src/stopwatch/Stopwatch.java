@@ -29,7 +29,7 @@ public class Stopwatch {
 	 * stopwatch is already running then start does nothing.
 	 */
 	public void start() {
-		if (run == false) {
+		if (!run) {
 			startTime = System.nanoTime();
 			run = true;
 		}
@@ -40,7 +40,7 @@ public class Stopwatch {
 	 * nothing.
 	 */
 	public void stop() {
-		if (run == true) {
+		if (run) {
 			stopTime = System.nanoTime();
 			run = false;
 		}
@@ -56,7 +56,7 @@ public class Stopwatch {
 	 * 
 	 */
 	public double getElapsed() {
-		if (run == true) {
+		if (run) {
 			return (System.nanoTime() - startTime) * NANOSECONDS;
 		} else {
 			return (stopTime - startTime) * NANOSECONDS;
@@ -69,10 +69,6 @@ public class Stopwatch {
 	 * @return true if the stopwatch is running, false if stopwatch is stopped
 	 */
 	public boolean isRunning() {
-		if (run == true) {
-			return true;
-		} else {
-			return false;
-		}
+		return run;
 	}
 }
