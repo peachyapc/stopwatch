@@ -27,6 +27,8 @@ public class SumDouble implements Runnable {
 	 */
 	public SumDouble(int counter) {
 		this.counter = counter;
+		for (int i = 0; i < ARRAY_SIZE; i++)
+			values[i] = new Double(i + 1);
 	}
 
 	/**
@@ -34,8 +36,6 @@ public class SumDouble implements Runnable {
 	 */
 	@Override
 	public void run() {
-		for (int i = 0; i < ARRAY_SIZE; i++)
-			values[i] = new Double(i + 1);
 		sum = new Double(0.0);
 		// count = loop counter, i = array index
 		for (int count = 0, i = 0; count < counter; count++, i++) {

@@ -27,6 +27,8 @@ public class SumDoublePrimitive implements Runnable {
 	 */
 	public SumDoublePrimitive(int counter) {
 		this.counter = counter;
+		for (int k = 0; k < ARRAY_SIZE; k++)
+			values[k] = k + 1;
 	}
 
 	/**
@@ -34,8 +36,6 @@ public class SumDoublePrimitive implements Runnable {
 	 */
 	@Override
 	public void run() {
-		for (int k = 0; k < ARRAY_SIZE; k++)
-			values[k] = k + 1;
 		// count = loop counter, i = array index value
 		for (int count = 0, i = 0; count < counter; count++, i++) {
 			if (i >= values.length)
